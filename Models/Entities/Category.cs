@@ -10,8 +10,9 @@
 		public Category()
 		{
 		}
-		public Category(string? name)
+		public Category(int categoryid, string? name)
 		{
+			CategoryId = categoryid;
 			Name = name;
 		}
 	}

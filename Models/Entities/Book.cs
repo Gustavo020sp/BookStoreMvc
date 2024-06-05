@@ -16,6 +16,7 @@
 		}
 		public Book(string? title, string? author, string? description, double price, Category category)
 		{
+
 			Title = title;
 			Author = author;
 			Description = description;

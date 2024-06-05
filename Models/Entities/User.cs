@@ -10,7 +10,6 @@
 		public User()
 		{
 		}
-
 		public User(int userid, string? username, string? password, string? email)
 		{
 			UserId = userid;
