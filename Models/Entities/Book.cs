@@ -1,26 +1,26 @@
 ﻿namespace Book_Store.Models.Entities
 {
-	public class Book
+    public class Book
 	{
-		public int BookId { get; set; }
+		public int Id { get; set; }
 		public string? Title { get; set; }
 		public string? Author { get; set; }
 		public string? Description { get; set; }
 		public double Price { get; set; }
-		public Category Category { get; set; }
+        public int Stock { get; set; }
+        public Category Category { get; set; }
 
 		//image remaining
 
-		public Book()
+		public Book() { }
+		public Book(int id, string? title, string? author, string? description, double price, int stock, Category category)
 		{
-		}
-		public Book(string? title, string? author, string? description, double price, Category category)
-		{
-
+			Id = id; 
 			Title = title;
 			Author = author;
 			Description = description;
 			Price = price;
+			Stock = stock;
 			Category = category;
 		}
 	}

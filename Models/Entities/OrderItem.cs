@@ -1,17 +1,24 @@
 ﻿namespace Book_Store.Models.Entities
 {
-	public class OrderItem
-	{
-        public int OrderItemId { get; set; }
-        public Order? Order { get; set; }
-		public double UnitPrice { get; set; }
-		public double Quantity { get; set; }
-		public OrderItem(int orderItemId, Order? order, double unitPrice, double quantity)
-		{
-			OrderItemId = orderItemId;
-			Order = order;
-			UnitPrice = unitPrice;
-			Quantity = quantity;
-		}
-	}
+    public class OrderItem
+    {
+        public int Id { get; set; }
+        public int OrderId { get; set; }
+        public int BookId { get; set; }
+        public int Quantity { get; set; }
+        public double UnitPrice { get; set; }
+
+        public OrderItem()
+        {
+        }
+
+        public OrderItem(int id, int orderId, int bookId, int quantity, double unitPrice)
+        {
+            Id = id;
+            OrderId = orderId;
+            BookId = bookId;
+            Quantity = quantity;
+            UnitPrice = unitPrice;
+        }
+    }
 }

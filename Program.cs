@@ -1,3 +1,6 @@
+using Book_Store.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace Book_Store
 {
 	public class Program
@@ -8,8 +11,10 @@ namespace Book_Store
 
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<BookStoreContext>(options =>
+                options.UseMySql(builder.Configuration.GetConnectionString("BookStoreContext"), new MySqlServerVersion(new Version()) ?? throw new InvalidOperationException("Connection string 'SalesWebMvcContext' not found.")));
 
-			var app = builder.Build();
+            var app = builder.Build();
 
 			// Configure the HTTP request pipeline.
 			if (!app.Environment.IsDevelopment())

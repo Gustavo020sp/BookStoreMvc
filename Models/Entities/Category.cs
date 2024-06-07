@@ -1,19 +1,16 @@
 ﻿namespace Book_Store.Models.Entities
 {
-	public class Category
-	{
-		public int CategoryId { get; set; }
-        public string? Name { get; set; }
+    public class Category
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
 
+        public Category() { }
 
-		//Empty constructor to Seed database
-		public Category()
-		{
-		}
-		public Category(int categoryid, string? name)
-		{
-			CategoryId = categoryid;
-			Name = name;
-		}
-	}
+        public Category(int id, string name)
+        {
+            Id = id;
+            Name = name;
+        }
+    }
 }
