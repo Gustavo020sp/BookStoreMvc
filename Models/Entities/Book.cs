@@ -9,11 +9,12 @@
 		public double Price { get; set; }
         public int Stock { get; set; }
         public Category Category { get; set; }
+		public string ImagePath { get; set; } 
 
-		//image remaining
+        //image remaining
 
-		public Book() { }
-		public Book(int id, string? title, string? author, string? description, double price, int stock, Category category)
+        public Book() { }
+		public Book(int id, string? title, string? author, string? description, double price, int stock, Category category, string imagepath)
 		{
 			Id = id; 
 			Title = title;
@@ -22,6 +23,7 @@
 			Price = price;
 			Stock = stock;
 			Category = category;
+			ImagePath = imagepath;
 		}
 	}
 }

@@ -16,7 +16,7 @@ namespace Book_Store
                 options.UseMySql(builder.Configuration.GetConnectionString("BookStoreContext"), new MySqlServerVersion(new Version()) ?? throw new InvalidOperationException("Connection string 'SalesWebMvcContext' not found.")));
 
             // Add services to the container.
-            builder.Services.AddScoped<SeedingService>();
+            //builder.Services.AddScoped<SeedingService>();
 
             var app = builder.Build();
 
