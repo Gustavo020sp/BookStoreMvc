@@ -11959,3 +11959,13 @@ th {
 .card .h6 {
   color: inherit;
 }
+
+.background-div {
+    width: 100%;
+    height: 1px; /* Adjust the height as needed */
+    overflow: auto;
+    background-image: url('../../../../Images/books.jpg');
+    background-size: cover; /* Cover the entire div */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+}

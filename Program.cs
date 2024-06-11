@@ -13,7 +13,7 @@ namespace Book_Store
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<BookStoreContext>(options =>
-                options.UseMySql(builder.Configuration.GetConnectionString("BookStoreContext"), new MySqlServerVersion(new Version()) ?? throw new InvalidOperationException("Connection string 'SalesWebMvcContext' not found.")));
+                options.UseMySql(builder.Configuration.GetConnectionString("BookStoreContext"), new MySqlServerVersion(new Version()) ?? throw new InvalidOperationException("Connection string 'BookStoreContext' not found.")));
 
             // Add services to the container.
             //builder.Services.AddScoped<SeedingService>();
