@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Book_Store.Services
 {
-    public class SeedingService : DbContext
+    public class SeedingService
     {
         private readonly BookStoreContext Context;
 
@@ -42,7 +42,8 @@ namespace Book_Store.Services
                 Author = "Suzanne Collins",
                 Description = "Could you survive on your own in the wild, with every one out to make sure you don't live to see the morning?\r\n",
                 Price = 90,
-                Category = Fantasy
+                Category = Fantasy,
+                ImagePath = "wwwroot\\Images\\hungergames.jpg"
             };
             Book b2 = new Book
             {
@@ -50,7 +51,8 @@ namespace Book_Store.Services
                 Author = "Jane Austen",
                 Description = "Since its immediate success in 1813, Pride and Prejudice has remained one of the most popular novels in the English language.",
                 Price = 20,
-                Category = Romance
+                Category = Romance,
+                ImagePath = "wwwroot\\Images\\prideandperju.jpg"
             };
             Book b3 = new Book
             {
@@ -58,7 +60,8 @@ namespace Book_Store.Services
                 Author = "Victor Monibo",
                 Description = "Space Habitat Altaire is the premier luxury resort in low Earth orbit, playground of the privileged and the perfect location to host reunions for the Rochford Institute. ",
                 Price = 5,
-                Category = ScienceFiction
+                Category = ScienceFiction,
+                ImagePath = "wwwroot\\Images\\escapevelocity.jpg"
             };
             Book b4 = new Book
             {
@@ -66,7 +69,8 @@ namespace Book_Store.Services
                 Author = "Tessa Fontaine",
                 Description = "When her mother goes missing, a young woman uncovers the secrets beneath her protected community.",
                 Price = 15,
-                Category = Horror
+                Category = Horror,
+                ImagePath = "wwwroot\\Images\\redgrove.jpg"
             };
 
             //Saving to database
