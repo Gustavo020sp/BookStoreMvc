@@ -1,4 +1,5 @@
 using BookMvc.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookMvc
 {
@@ -12,7 +13,8 @@ namespace BookMvc
             builder.Services.AddControllersWithViews();
 
             //add DbContext
-            builder.Services.AddDbContext<AppDbContext>();
+            builder.Services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 
             var app = builder.Build();
 
