@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BookMvc.Models.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace BookMvc.Models.Entities
 {
@@ -8,7 +9,11 @@ namespace BookMvc.Models.Entities
         public int Id{ get; set; }
         public string? Name { get; set; }
         public string? ImageUrl { get; set; }
-        public double Price {  get; set; }
+        public string? Description { get; set; }
+        public Category Category { get; set; }
+
+        //Relationships
+        public List<Author_Book>? Books_Authors { get; set;}
 
     }
 }

@@ -10,5 +10,8 @@ namespace BookMvc.Models.Entities
         public int FullName { get; set; }
         public int Bio { get; set; }
 
+        //Relationships
+        public List<Author_Book>? Authors_Books { get; set;}
+
     }
 }
