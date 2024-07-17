@@ -1,3 +1,5 @@
+using BookMvc.Data;
+
 namespace BookMvc
 {
     public class Program
@@ -8,6 +10,9 @@ namespace BookMvc
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            //add DbContext
+            builder.Services.AddDbContext<AppDbContext>();
 
             var app = builder.Build();
 
