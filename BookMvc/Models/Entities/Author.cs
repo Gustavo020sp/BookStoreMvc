@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BookMvc.Models
+namespace BookMvc.Models.Entities
 {
     public class Author
     {
