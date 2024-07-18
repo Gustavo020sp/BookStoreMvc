@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookMvc.Data
 {
-    public class AppDbContext : DbContext
+    public class BookStoreDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        public BookStoreDbContext(DbContextOptions<BookStoreDbContext> options) : base(options)
         {
         }
 
@@ -25,6 +25,6 @@ namespace BookMvc.Data
 
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book> Books { get; set; }
-        public DbSet<Author_Book> Author_Books { get; set; }
+        public DbSet<Author_Book> Author_Book { get; set; }
     }
 }

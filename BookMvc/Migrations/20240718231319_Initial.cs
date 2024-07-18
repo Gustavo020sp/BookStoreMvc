@@ -17,8 +17,8 @@ namespace BookMvc.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProfilePictureURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FullName = table.Column<int>(type: "int", nullable: false),
-                    Bio = table.Column<int>(type: "int", nullable: false)
+                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Bio = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -42,7 +42,7 @@ namespace BookMvc.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Author_Books",
+                name: "Author_Book",
                 columns: table => new
                 {
                     BookId = table.Column<int>(type: "int", nullable: false),
@@ -50,15 +50,15 @@ namespace BookMvc.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Author_Books", x => new { x.AuthorId, x.BookId });
+                    table.PrimaryKey("PK_Author_Book", x => new { x.AuthorId, x.BookId });
                     table.ForeignKey(
-                        name: "FK_Author_Books_Authors_AuthorId",
+                        name: "FK_Author_Book_Authors_AuthorId",
                         column: x => x.AuthorId,
                         principalTable: "Authors",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Author_Books_Books_BookId",
+                        name: "FK_Author_Book_Books_BookId",
                         column: x => x.BookId,
                         principalTable: "Books",
                         principalColumn: "Id",
@@ -66,8 +66,8 @@ namespace BookMvc.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Author_Books_BookId",
-                table: "Author_Books",
+                name: "IX_Author_Book_BookId",
+                table: "Author_Book",
                 column: "BookId");
         }
 
@@ -75,7 +75,7 @@ namespace BookMvc.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Author_Books");
+                name: "Author_Book");
 
             migrationBuilder.DropTable(
                 name: "Authors");

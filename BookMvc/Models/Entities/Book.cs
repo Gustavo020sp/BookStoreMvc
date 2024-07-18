@@ -5,7 +5,6 @@ namespace BookMvc.Models.Entities
 {
     public class Book
     {
-        [Key]
         public int Id{ get; set; }
         public string? Name { get; set; }
         public string? ImageUrl { get; set; }
@@ -15,5 +14,13 @@ namespace BookMvc.Models.Entities
         //Relationships
         public List<Author_Book>? Books_Authors { get; set;}
 
+        public Book(int id, string? name, string? imageUrl, string? description, Category category)
+        {
+            Id = id;
+            Name = name;
+            ImageUrl = imageUrl;
+            Description = description;
+            Category = category;
+        }
     }
 }

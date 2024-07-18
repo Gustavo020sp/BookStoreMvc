@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BookMvc.Migrations
 {
-    [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(BookStoreDbContext))]
+    partial class BookStoreDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -29,11 +29,13 @@ namespace BookMvc.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Bio")
-                        .HasColumnType("int");
+                    b.Property<string>("Bio")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("FullName")
-                        .HasColumnType("int");
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProfilePictureURL")
                         .HasColumnType("nvarchar(max)");
@@ -55,7 +57,7 @@ namespace BookMvc.Migrations
 
                     b.HasIndex("BookId");
 
-                    b.ToTable("Author_Books");
+                    b.ToTable("Author_Book");
                 });
 
             modelBuilder.Entity("BookMvc.Models.Entities.Book", b =>

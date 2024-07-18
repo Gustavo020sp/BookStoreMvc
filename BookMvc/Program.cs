@@ -13,8 +13,11 @@ namespace BookMvc
             builder.Services.AddControllersWithViews();
 
             //add DbContext
-            builder.Services.AddDbContext<AppDbContext>(options =>
+            builder.Services.AddDbContext<BookStoreDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
+
+            //Add Seeding scope
+            builder.Services.AddScoped<SeedingService>();
 
             var app = builder.Build();
 
@@ -36,6 +39,17 @@ namespace BookMvc
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            //Seed database
+            SeedDatabase();
+            void SeedDatabase()
+            {
+                using (var scope = app.Services.CreateScope())
+                {
+                    var dbInitializer = scope.ServiceProvider.GetRequiredService<SeedingService>();
+                    dbInitializer.Seed(app);
+                }
+            }
 
             app.Run();
         }
